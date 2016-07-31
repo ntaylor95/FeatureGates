@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers} from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Person } from './person';
 
@@ -12,7 +12,7 @@ export class PeopleService{
 
   getAll(): Observable<Person[]>{
     let people$ = this.http
-      .get(`${this.baseUrl}/people`)
+      .get(`${this.baseUrl}/people`, {headers: this.getHeaders()})
       .map(mapPersons)
       .catch(handleError);
       return people$;
@@ -20,7 +20,7 @@ export class PeopleService{
 
   get(id: number): Observable<Person> {
     let person$ = this.http
-      .get(`${this.baseUrl}/people/${id}`)
+      .get(`${this.baseUrl}/people/${id}`, {headers: this.getHeaders()})
       .map(mapPerson);
       return person$;
   }
@@ -31,8 +31,13 @@ export class PeopleService{
     return this.http
       .put(`${this.baseUrl}/people/${person.id}`, JSON.stringify(person));
   }
-}
 
+  private getHeaders(){
+    let headers = new Headers();
+    headers.append('Accept', 'application/json');
+    return headers;
+  }
+}
 
 function mapPersons(response:Response): Person[]{
    // uncomment to simulate error:
