@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Response } from '@angular/http';
 
 import { Person } from './person';
 import { PeopleService } from './people.service';
@@ -21,7 +22,10 @@ export class PersonDetailsComponent implements OnInit, OnDestroy {
     ngOnInit(){
         this.sub = this.route.params.subscribe(params => {
           let id = Number.parseInt(params['id']);
-          this.person = this.peopleService.get(id);
+          console.log('getting person with id: ', id);
+          this.peopleService
+            .get(id)
+            .subscribe(p => this.person = p);
         });
     }
 
@@ -35,6 +39,10 @@ export class PersonDetailsComponent implements OnInit, OnDestroy {
     }
 
     savePersonDetails(){
-        this.peopleService.save(this.person);
+      this.peopleService
+          .save(this.person)
+          .subscribe(
+            (r: Response) => {console.log('success');}
+          );
     }
 }
