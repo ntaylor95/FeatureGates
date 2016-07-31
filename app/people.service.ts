@@ -29,7 +29,7 @@ export class PeopleService{
     // this won't actually work because the StarWars API doesn't
     // is read-only. But it would look like this:
     return this.http
-      .put(`${this.baseUrl}/people/${person.id}`, JSON.stringify(person));
+      .put(`${this.baseUrl}/people/${person.id}`, JSON.stringify(person), {headers: this.getHeaders()});
   }
 
   private getHeaders(){
