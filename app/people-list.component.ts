@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Person } from './person';
 import { PeopleService } from './people.service';
 
 @Component({
   selector: 'people-list',
-  directives: [ROUTER_DIRECTIVES] ,
   template: `
   <section>
     <section *ngIf="isLoading && !errorMessage">
