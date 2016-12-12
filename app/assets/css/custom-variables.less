@@ -1,0 +1,183 @@
+import "../../../vendor/bootstrap-3.0.3/less/variables.less";
+
+// TODO REFACTOR custom-variables.less //
+
+// "fedex" intent: custom-variables is a complete (edited) copy of the vendor variables.less
+// current reality: mix of copy/paste, and custom/new stuff.
+// ran out of time to merge it, so including pristine vendor variables
+// and keeping the rest as-is (visapp version, pre-fedex integration) here:
+// after refactoring, this file should have no @import above,
+// and should be a customized complete copy of variables.less from vendor/bootstrap-3.0.3
+// -cweekly 140418
+// NOTE we may
+
+
+// WARNING XXX BELOW IS NOT THE RIGHT WAY TO CUSTOMIZE BOOTSTRAP XX //
+
+
+
+// Grays
+// -------------------------
+
+@gray-darker:            lighten(#000, 13.5%); // #222
+@gray-dark:              lighten(#000, 20%);   // #333
+@gray:                   lighten(#000, 33.5%); // #555
+@gray-light:             lighten(#000, 60%);   // #999
+@gray-lighter:           #ccc;
+
+// Brand colors
+// -------------------------
+
+@brand-blue: #00bad8;
+@brand-green: #6db33f;
+@gradient-blue: #00bce4;
+@gradient-green: #62a139;
+
+@brand-primary:         #428bca;
+@brand-success:         #5cb85c;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+@brand-info:            #5bc0de;
+
+// Links
+// -------------------------
+
+@link-color:            #00aacc;
+@link-hover-color:      darken(@link-color, 15%);
+
+// Scaffolding
+// -------------------------
+
+@body-bg:               #fff;
+@text-color:            @gray-dark;
+
+// Breadcrumbs
+// -------------------------
+@breadcrumb-bg:               transparent;
+@breadcrumb-color:            #ccc;
+@breadcrumb-active-color:     @gray-light;
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+@screen-xs:                  480px;
+@screen-phone:               @screen-xs;
+
+// Small screen / tablet
+@screen-sm:                  768px;
+@screen-tablet:              @screen-sm;
+
+// Medium screen / desktop
+@screen-md:                  992px;
+@screen-desktop:             @screen-md;
+
+// Large screen / wide desktop
+@screen-lg:                  1200px;
+@screen-lg-desktop:          @screen-lg;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm - 1);
+@screen-sm-max:              (@screen-md - 1);
+@screen-md-max:              (@screen-lg - 1);
+
+
+// Grid system
+// --------------------------------------------------
+
+// Number of columns in the grid system
+@grid-columns:              12;
+// Padding, to be divided by two and applied to the left and right of all columns
+@grid-gutter-width:         30px;
+// Point at which the navbar stops collapsing
+@grid-float-breakpoint:     @screen-tablet;
+
+
+// Navbar
+// -------------------------
+
+// Basics of a navbar
+@navbar-height:                    50px;
+@navbar-margin-bottom:             @line-height-computed;
+@navbar-default-color:             #777;
+@navbar-default-bg:                #fff;
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@navbar-border-radius:             @border-radius-base;
+@navbar-padding-horizontal:        floor(@grid-gutter-width / 2);
+@navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
+
+// Navbar links
+@navbar-default-link-color:                @link-color;
+@navbar-default-link-hover-color:          @link-hover-color;
+@navbar-default-link-hover-bg:             transparent;
+@navbar-default-link-active-color:         @link-hover-color;
+@navbar-default-link-active-bg:            transparent; //darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-disabled-color:       #ccc;
+@navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+@navbar-default-brand-color:               @navbar-default-link-color;
+@navbar-default-brand-hover-color:         darken(@navbar-default-link-color, 10%);
+@navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg:           #fff;
+@navbar-default-toggle-icon-bar-bg:        #a6a6a6;
+@navbar-default-toggle-border-color:       #fff;
+
+// Buttons
+// -------------------------
+
+@btn-font-weight:                normal;
+
+@btn-default-color:              #333;
+@btn-default-bg:                 #fff;
+@btn-default-border:             #ccc;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 #f15c22;
+@btn-primary-border:             #f15c22;
+
+@btn-secondary-color:            #fff;
+@btn-secondary-bg:               @brand-green;
+@btn-secondary-border:           @brand-green;
+
+@btn-success-color:              #fff;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@btn-success-bg, 5%);
+
+@btn-warning-color:              #fff;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@btn-warning-bg, 5%);
+
+@btn-danger-color:               #fff;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@btn-danger-bg, 5%);
+
+@btn-info-color:                 #fff;
+@btn-info-bg:                    @brand-blue;
+@btn-info-border:                @brand-blue;
+
+@btn-link-disabled-color:        @gray-light;
+
+// Footer
+// -------------------------
+
+@footer-height: 400px;
+@footer-width: 540px;
+@footer-bg: #f2f2f2;
+
+// Iconography
+// -------------------------
+
+@icon-font-path:          "/css/vw/fonts/";
+@icon-font-name:          "glyphicons-halflings-regular";
+
+// Helvetica font families for vw
+// -------------------------
+@helvetica-neue-bold:       "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "SegoeUIBold", "SegoeUI-Bold", "Segoe UI Bold", "HelveticaNeue", "Helvetica Neue","Helvetica","Arial", sans-serif;
+@helvetica-neue-medium:     "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium","SegoeUISemibold", "SegoeUI-Semibold", "Segoe UI Semibold", "HelveticaNeue", "Helvetica Neue", "Helvetica","Arial", sans-serif;
+@helvetica-neue-light:      "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "SegoeUISemilight", "SegoeUI-Semilight", "Segoe UI Semilight", "SegoeUI", "Segoe UI", "HelveticaNeue", "Helvetica Neue",  Helvetica, Arial, sans-serif;
+@helvetica-neue-regular:    "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "SegoeUI", "Segoe UI", Helvetica, Arial, sans-serif;
+@helvetica-neue-thin:       "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "SegoeUI-Light", @helvetica-neue-light;
+

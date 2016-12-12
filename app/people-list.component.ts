@@ -21,6 +21,7 @@ import { PeopleService } from './people.service';
         {{errorMessage}}
       </section>
   </section>
+  <feature-gate-list></feature-gate-list>
   `
 })
 export class PeopleListComponent implements OnInit{

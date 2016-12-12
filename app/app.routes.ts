@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PeopleListComponent } from './people-list.component';
 import { PersonDetailsComponent } from './person-details.component';
+import { FeatureGateListComponent } from './feature-gate-list.component';
 
 // Route config let's you map routes to components
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
     redirectTo: '/persons',
     pathMatch: 'full'
   },
+  {
+    path: 'featureGates',
+    component: FeatureGateListComponent,
+  }
 ];
 
 export const routing = RouterModule.forRoot(routes);

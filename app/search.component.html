@@ -1,0 +1,17 @@
+<div id="search-component">
+  <h4>Hero Search</h4>
+  <!--<input #searchBox id="search-box" (keyup)="search(searchBox.value)" />-->
+  <input #searchBox id="search-box" (keyup)="0" />
+  <div>
+    <!--<div *ngFor="let featureGate of featureGates | async"
+         (click)="gotoDetail(featureGate)" class="search-result" >
+      {{featureGate.featureTitle}}
+    </div>-->
+
+    <div *ngFor="let featureGate of featureGates | myfilter:searchBox.value"
+         (click)="gotoDetail(featureGate)" class="search-result" >
+      {{featureGate.featureTitle}}
+    </div>
+
+  </div>
+</div>
