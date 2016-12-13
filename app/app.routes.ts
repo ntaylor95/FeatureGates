@@ -19,7 +19,7 @@ const routes: Routes = [
   // map '/' to '/persons' as our default route
   {
     path: '',
-    redirectTo: '/persons',
+    redirectTo: '/featureGates',
     pathMatch: 'full'
   },
   {
